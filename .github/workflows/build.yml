@@ -26,7 +26,7 @@ jobs:
           path: users/${{ github.actor }}
 
       - name: Build firmware
-        run: qmk compile "users/${{ github.actor }}/${{ matrix.file }}" -e CONVERT_TO=blok
+        run: qmk compile "users/${{ github.actor }}/${{ matrix.file }}" -e CONVERT_TO=blok -e ENCODER_ENABLE=no -e RGB_MATRIX_ENABLE=no -e RGBLIGHT_ENABLE=no -e LED_MATRIX_ENABLE=no
 
       - name: Archive firmware
         uses: actions/upload-artifact@v3
